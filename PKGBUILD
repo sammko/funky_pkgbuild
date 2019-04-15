@@ -31,7 +31,11 @@ prepare() {
 build() {
     export GOPATH="${srcdir}"
     cd src/github.com/faiface/funky
-    go install -v -gcflags "all=-trimpath=${GOPATH}/src" -asmflags "all=-trimpath=${GOPATH}/src" ./...
+    go install -v \
+        -gcflags "all=-trimpath=${GOPATH}/src" \
+        -asmflags "all=-trimpath=${GOPATH}/src" \
+        -ldflags "-extldflags ${LDFLAGS}" \
+        ./...
 }
 
 # check() {
