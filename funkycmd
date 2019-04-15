@@ -1,0 +1,3 @@
+#!/bin/sh
+
+FUNKY=/usr/lib/funky/stdlib /usr/lib/funky/funkycmd "$@"
